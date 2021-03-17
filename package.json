@@ -1,0 +1,22 @@
+{
+  "name": "botrun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quickstart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poowerllz/botRUN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poowerllz/botRUN/issues"
+  },
+  "homepage": "https://github.com/Poowerllz/botRUN#readme",
+  "dependencies": {
+    "googleapis": "^67.1.1"
+  }
+}
