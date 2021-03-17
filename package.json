@@ -4,7 +4,7 @@
   "description": "",
   "main": "quickstart.js",
   "scripts": {
-    "start": "quickstart.js"
+    "start": "node quickstart.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Poowerllz/botRUN#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "googleapis": "^67.1.1"
   }
 }

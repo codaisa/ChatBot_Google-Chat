@@ -1,6 +1,6 @@
 const {google} = require('googleapis');
 
-
+sendMessage();
 
 function sendMessage(){
   const chat = google.chat({
