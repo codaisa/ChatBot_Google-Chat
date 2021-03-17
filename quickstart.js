@@ -1,4 +1,4 @@
-/* const {google} = require('googleapis');
+const {google} = require('googleapis');
 const chat = google.chat({
   version: 'v1',
   auth: 'AIzaSyDm-K5Nh9dDqY_7moHovfURZVvpMhJOSHI' // specify your API key here
@@ -42,6 +42,4 @@ var scopes = 'https://www.googleapis.com/auth/chat.bot'
    main().catch(e => {
      console.error(e);
      throw e;
-   }); */
-
-   console.log("teste")
+   }); 
