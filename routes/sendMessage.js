@@ -10,17 +10,16 @@ router.get('/', (req, res, next) =>{
     });
 });
 
- router.get('/:message/:canal', (req, res, next) =>{
-    var id = req.params.message
-    const space = req.params.canal
-    id = id.split()[0]
-    id = id.replace(/[+]/g, " ")
-    callFunction.sendMessage(id, space)
+ router.get('/:space/:message', (req, res, next) =>{
+    var space = req.params.space
+    const msg = req.params.message
+    space = space.split()[0]
+    callFunction.sendMessage(msg, space)
 
         res.status(200).send({
-            mensagem:'Ok, o processo foi chamado.',
-            Message: id,
+            status:'Ok, processo disparado.',
             space: space,
+            msg: msg,
         });
 }); 
 
