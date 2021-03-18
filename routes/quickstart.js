@@ -28,7 +28,14 @@ exports.sendMessage = async (messageValue, spaceValue)=>{
           "annotations": [],
           "argumentText": "my_argumentText",
           "attachment": [],
-          "cards": [],
+          "cards": [
+            createHeaderWithURL("Pessoal, vocês já apontaram as horas hoje? ","Talvez esteja na hora de apontar.",doubtsIcon),
+            {
+              "sections": [{
+                "widgets": apontamentoHoras
+              }]
+            }
+          ],
           "fallbackText": "my_fallbackText",
           "name": "my_name",
           "sender": {},
@@ -49,6 +56,40 @@ exports.sendMessage = async (messageValue, spaceValue)=>{
     });
 
 /*     RESPONSE CARD         */
-    
+var doubtsIcon = "https://media.giphy.com/media/PidtQ2uWrHqxhBnhOa/giphy.gif";
+  function createHeaderWithURL(title, subtitle,url){
+    return {
+    "header": {
+      "title" : title,
+      "subtitle" : subtitle,
+      "imageUrl" : url
+    }}; 
+    }
 }
+
+var apontamentoHoras = [{
+  "textParagraph": {
+    "text": "<b>Basta escolher qual hora você deseja apontar."
+  }
+},{
+  "buttons": [{
+    "textButton": {
+      "text": "APONTAR HORA DE ENTRADA",
+      "onClick": {
+        "action": {
+          "actionMethodName": "HORAENTRADA"
+        }
+      }
+    }
+  }, {
+    "textButton": {
+      "text": "APONTAR HORA DE SAÍDA",
+      "onClick": {
+        "action": {
+          "actionMethodName": "HORASAIDA"
+        }
+      }
+    }
+  }]
+}];
   
