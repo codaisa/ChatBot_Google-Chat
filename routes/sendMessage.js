@@ -10,14 +10,18 @@ router.get('/', (req, res, next) =>{
     });
 });
 
- router.get('/:message', (req, res, next) =>{
-    const id = req.params.message
-        res.status(200).send({
-            mensagem:'Ok, o processo foi chamado. ',
-            id: id
-        });
+ router.get('/:message/:canal', (req, res, next) =>{
+    var id = req.params.message
+    const space = req.params.canal
+    id = id.split()[0]
+    id = id.replace(/[+]/g, " ")
+    callFunction.sendMessage(id, space)
 
-        callFunction.sendMessage(id)
+        res.status(200).send({
+            mensagem:'Ok, o processo foi chamado.',
+            Message: id,
+            space: space,
+        });
 }); 
 
 module.exports = router;

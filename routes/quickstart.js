@@ -1,13 +1,14 @@
 const {google} = require('googleapis');
 
-exports.sendMessage = async (messageValue)=>{
+exports.sendMessage = async (messageValue, spaceValue)=>{
   const chat = google.chat({
     version: 'v1',
     auth: 'AIzaSyDm-K5Nh9dDqY_7moHovfURZVvpMhJOSHI' // specify your API key here
   });
   
   var scopes = 'https://www.googleapis.com/auth/chat.bot'
-  
+  var content
+
   async function main() {
     const auth = new google.auth.GoogleAuth({
       // Scopes can be specified either as an array or as a single, space-delimited string.
@@ -16,7 +17,7 @@ exports.sendMessage = async (messageValue)=>{
     
     // Do the magic
     const res = await chat.spaces.messages.create({
-      parent: 'spaces/AAAAZw0HEoY',
+      parent: 'spaces/' + spaceValue,
       // Opaque thread identifier string that can be specified to group messages into a single thread. If this is the first message with a given thread identifier, a new thread is created. Subsequent messages with the same thread identifier will be posted into the same thread. This relieves bots and webhooks from having to store the Hangouts Chat thread ID of a thread (created earlier by them) to post further updates to it. Has no effect if thread field, corresponding to an existing thread, is set in message.
       
       // Request body metadata
@@ -37,13 +38,17 @@ exports.sendMessage = async (messageValue)=>{
           "thread": {}
           
         },
+        
       });
-      console.log(res.data);
+      console.log(res.data)
     }
-    
+
     main().catch(e => {
       console.error(e);
       throw e;
-    }); 
+    });
+
+/*     RESPONSE CARD         */
+    
 }
   
