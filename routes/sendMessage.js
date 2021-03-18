@@ -6,7 +6,7 @@ const callFunction = require('./quickstart.js')
 
 router.get('/', (req, res, next) =>{
     res.status(200).send({
-        mensagem:'Oops. Esta rota na api não foi ajustada.'
+        mensagem:'Ok! Procedimento concluído.'
     });
 });
 
@@ -17,7 +17,7 @@ router.get('/', (req, res, next) =>{
     callFunction.sendMessage(msg, space)
 
         res.status(200).send({
-            status:'Ok, processo disparado.',
+            mensagem:'Ok, o processo foi chamado.',
             space: space,
             msg: msg,
         });
