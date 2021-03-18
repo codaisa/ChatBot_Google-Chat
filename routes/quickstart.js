@@ -41,7 +41,6 @@ exports.sendMessage = async (messageValue, spaceValue)=>{
           "sender": {},
           "slashCommand": {},
           "space": {},
-          "text": " ",
           "thread": {}
           
         },
