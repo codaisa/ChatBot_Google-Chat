@@ -1,8 +1,6 @@
 const {google} = require('googleapis');
 
-sendMessage();
-
-function sendMessage(){
+exports.sendMessage = async (messageValue)=>{
   const chat = google.chat({
     version: 'v1',
     auth: 'AIzaSyDm-K5Nh9dDqY_7moHovfURZVvpMhJOSHI' // specify your API key here
@@ -35,7 +33,7 @@ function sendMessage(){
           "sender": {},
           "slashCommand": {},
           "space": {},
-          "text": "Esta é uma mensagem enviada por meio de um código convertido em JS.",
+          "text": messageValue,
           "thread": {}
           
         },
@@ -47,4 +45,5 @@ function sendMessage(){
       console.error(e);
       throw e;
     }); 
-  }
+}
+  

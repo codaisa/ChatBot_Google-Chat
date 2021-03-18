@@ -4,7 +4,7 @@
   "description": "",
   "main": "quickstart.js",
   "scripts": {
-    "start": "node quickstart.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
