@@ -31,6 +31,7 @@ router.post('/:space', (req, res, next) => {
     var resBody = req.body
     var space = req.params.space
     callFunctionPOST.sendMessage(resBody,space)
+    console.log(resBody)
     res.status(201).send({
         status: 'Ok, o card foi emitido. ',
         cardResponse:  resBody

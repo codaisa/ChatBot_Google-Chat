@@ -46,7 +46,7 @@ exports.sendMessage = async (messageValue, spaceValue)=>{
         },
         
       });
-      console.log(res.data)
+      console.log("OK! CARD ENVIADO")
     }
 
     main().catch(e => {
