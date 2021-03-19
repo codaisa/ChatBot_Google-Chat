@@ -7,7 +7,7 @@ exports.sendMessage = async (card, spaceValue)=>{
   });
   
   var scopes = 'https://www.googleapis.com/auth/chat.bot'
-  
+
   async function main() {
     const auth = new google.auth.GoogleAuth({
       // Scopes can be specified either as an array or as a single, space-delimited string.
@@ -40,7 +40,6 @@ exports.sendMessage = async (card, spaceValue)=>{
         },
         
       });
-      console.log(res.data)
     }
 
     main().catch(e => {
